@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 module.exports = {
-  entry: './src/index.js',
+  entry: ["@babel/polyfill", './src/index.js'],
   //output of the bundle
   output: {
     path: __dirname + '/dist',
@@ -21,9 +21,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   //hot reloader
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  // plugins: [
+  //   new webpack.HotModuleReplacementPlugin()
+  // ],
   //When running npm start the output of dev server will be to this folder
   devServer: {
     contentBase: './dist'
