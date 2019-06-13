@@ -15,6 +15,7 @@ export const Name = styled.span`
 export const Description = styled.span`
     font-size: 20px;
     padding: 10px 0;
+    align-self: center;
 `;
 
 export const Container = styled.div`
