@@ -5,7 +5,7 @@ import createRootReducer from './reducers'
 import logger from 'redux-logger'
 
 import createSagaMiddleware from 'redux-saga';
-import quinelaSagas from '../sagas';
+import dashboardSagas from '../sagas';
 
 const sagasMiddleware = createSagaMiddleware();
 export const history = createBrowserHistory()
@@ -22,7 +22,7 @@ function configureStore(preloadedState) {
             ),
         ),
     )
-    sagasMiddleware.run(quinelaSagas);
+    sagasMiddleware.run(dashboardSagas);
     return store
 }
 

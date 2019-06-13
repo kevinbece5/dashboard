@@ -14,8 +14,6 @@ function* confirmLogin(action) {
             password: action.password
         }
         const response = yield call(quielaRequester.post, '/login', body);
-        localStorage.setItem('email', response.data.email);
-        localStorage.setItem('name', response.data.name);
         yield put({
             type: actionTypes.CONFIRM_LOGIN_SUCCESS,
             name: response.data.name,
@@ -43,7 +41,7 @@ function* confirmLogout(action) {
 }
 
 
-export default function* quinelaSagas() {
+export default function* dashboardSagas() {
     yield takeEvery(actionTypes.CONFIRM_LOGIN, confirmLogin);
     yield takeEvery(actionTypes.CONFIRM_LOGOUT, confirmLogout)
 }

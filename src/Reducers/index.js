@@ -8,7 +8,7 @@ const initialState = {
 }
 
 
-export default function Quinela(state = initialState, action) {
+export default function Dashboard(state = initialState, action) {
     switch (action.type) {
         case actionTypes.CONFIRM_LOGIN_SUCCESS: {
             return {

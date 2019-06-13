@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
-import quinelaReducer from '../Reducers';
+import dashboardReducer from '../Reducers';
 
 export default (history) => combineReducers({
-    quinela: quinelaReducer,
+    dashboard: dashboardReducer,
     router: connectRouter(history)
 })
