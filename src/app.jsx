@@ -21,16 +21,6 @@ class App extends React.Component {
 
     componentDidMount() {
         axios.get('/getUserInfo')
-            .then((res) => {
-                const { name, description, image } = res.data;
-                this.setState({
-                    user: {
-                        name,
-                        description,
-                        image
-                    }
-                })
-            })
             .then(() => {
                 this.props.history.push('/profile')
             })
