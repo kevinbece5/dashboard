@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "start": "nodemon server/",
+    "start": "node server/",
+    "start:dev": "nodemon server/",
     "webpack": "webpack -d --watch",
     "dev": "concurrently \"npm run webpack\" \"npm run start\""
   },
