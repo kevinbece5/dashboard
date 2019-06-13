@@ -53,7 +53,6 @@ export const Button = styled.button`
 `;
 
 export const FieldContainer = styled.div`
-    margin: auto;
     display: flex;
     height: 40%;
     align-items: center;
