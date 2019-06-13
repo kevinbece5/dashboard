@@ -9,7 +9,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const routes = require('./routes');
 
-mongoose.connect('mongodb://localhost:27017/dashboard');
+const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/dashboard";
+mongoose.connect(mongoURI);
 mongoose.set('useFindAndModify', false);
 const db = mongoose.connection;
 
