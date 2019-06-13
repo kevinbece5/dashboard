@@ -27,7 +27,21 @@ router.get('/getUserInfo', function (req, res) {
         if (err || !userInfo) {
             res.sendStatus(404);
         } else {
-            res.send({ name: userInfo.name, description: userInfo.description, image: userInfo.image });
+            res.send({ name: userInfo.name, description: userInfo.description, image: userInfo.image, id: req.session.userId });
+        }
+    })
+})
+
+router.post('/updateUserInfo', function (req, res) {
+    const { id, field } = req.body
+    let params = { [field.field]: field.value };
+    console.log(params, id);
+    User.findByIdAndUpdate(req.session.userId, params, (err, response) => {
+        if (err) {
+            res.sendStatus(404);
+        } else {
+            console.log('response', response);
+            res.sendStatus(200)
         }
     })
 })
