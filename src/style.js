@@ -42,13 +42,14 @@ export const Item = styled.div`
     letter-spacing: -0.2px;
     color: #ffffff;
     margin-right: 24px;
+    border-bottom: ${(props) => props.selected ? '6px solid #7e90f6' : ''};
 `
 
 export const Body = styled.div`
     display:flex;
-    background: yellow;
     justify-content: center;
     flex:1;
+    height: 100%:
 `
 
 export const Scroller = styled.div`
@@ -57,6 +58,12 @@ export const Scroller = styled.div`
     overflow:scroll;
     padding: 40px;
     width:100%;
-    background: #F0F0F0;
     justify-content:center;
 `;
+
+export const LogoutContainer = styled.div`
+    display: flex;
+    width: 78%;
+    justify-content: flex-end;
+
+`
