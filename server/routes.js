@@ -33,14 +33,12 @@ router.get('/getUserInfo', function (req, res) {
 })
 
 router.post('/updateUserInfo', function (req, res) {
-    const { id, field } = req.body
+    const { field } = req.body
     let params = { [field.field]: field.value };
-    console.log(params, id);
     User.findByIdAndUpdate(req.session.userId, params, (err, response) => {
         if (err) {
             res.sendStatus(404);
         } else {
-            console.log('response', response);
             res.sendStatus(200)
         }
     })
@@ -51,7 +49,6 @@ router.get('/allUsers', function (req, res) {
         if (err) {
             res.sendStatus(400)
         } else {
-            console.log('response', response);
             res.send(response)
         }
     })
